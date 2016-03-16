@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "local.watt.builditbigger"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+
+    productFlavors {
+        paid {
+            applicationId = "local.watt.builditbigger.paid"
+        }
+        free {
+            applicationId = "local.watt.builditbigger.free"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    compile project(":javajokelib")
+    compile project(":androidjokelib")
+    compile 'com.jakewharton:butterknife:6.0.0'
+
+    compile 'com.android.support:appcompat-v7:23.0'
+    compile 'com.android.support:design:23.2.1'
+
+    compile project(path: ':backend', configuration: 'android-endpoints')
+
+    // Free flavor gets ads
+    freeCompile 'com.google.android.gms:play-services-ads:8.4.0'
+}

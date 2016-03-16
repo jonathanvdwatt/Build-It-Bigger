@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".JokeActivity">
+
+    <TextView
+        android:id="@+id/tv_banner"
+        android:text="@string/tv_here_is_your_joke"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:background="@android:color/holo_orange_light"
+        android:textColor="@android:color/white"/>
+
+
+    <TextView
+        android:id="@+id/tv_joke"
+        tools:text="Programmer(noun.)\n\nA machine that turns coffee into code."
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@android:color/holo_orange_dark"
+        android:textColor="@android:color/white"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

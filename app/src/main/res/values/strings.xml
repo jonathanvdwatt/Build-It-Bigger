@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Build It Bigger</string>
+    <string name="action_settings">Settings</string>
+    <string name="tv_pressbutton_for_joke">Press the button for a joke.</string>
+    <string name="button_tell_joke">Tell joke</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
