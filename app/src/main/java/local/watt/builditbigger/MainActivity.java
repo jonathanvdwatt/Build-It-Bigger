@@ -4,13 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 import local.watt.androidjokelib.JokeActivity;
 import local.watt.builditbigger.interfaces.OnTaskCompleted;
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted<J
     private Intent mIntent;
 
     @InjectView(R.id.button) Button mButton;
+    @InjectView(R.id.progessbar) ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +40,19 @@ public class MainActivity extends AppCompatActivity implements OnTaskCompleted<J
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mButton.setVisibility(View.GONE);
+                mProgressBar.setVisibility(View.VISIBLE);
                 tellJoke(v);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        mProgressBar.setVisibility(View.GONE);
+        mButton.setVisibility(View.VISIBLE);
     }
 
     private void tellJoke(View v) {
